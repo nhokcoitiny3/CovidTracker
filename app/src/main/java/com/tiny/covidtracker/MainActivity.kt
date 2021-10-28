@@ -8,6 +8,10 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.tiny.covidtracker.ui.splash.SplashScreen
 import com.tiny.covidtracker.ui.theme.CovidTrackerTheme
 
 class MainActivity : ComponentActivity() {
@@ -15,9 +19,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             CovidTrackerTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
+                val navController = rememberNavController()
+
+                NavHost(navController, startDestination = "splash") {
+                    composable("splash") {
+                        SplashScreen(
+                            onNavigateNextScreen = { navController.navigate("splash") },
+                        )
+                    }
                 }
             }
         }
