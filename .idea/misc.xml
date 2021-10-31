@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/drawable/ic_declaration.xml" value="0.1" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/drawable/ic_global.xml" value="0.1" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/drawable/ic_global_unselected.xml" value="0.1" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/drawable/ic_health.xml" value="0.1" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/drawable/ic_news.xml" value="0.1" />
         <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/drawable/ic_virus.xml" value="0.36666666666666664" />
       </map>
     </option>

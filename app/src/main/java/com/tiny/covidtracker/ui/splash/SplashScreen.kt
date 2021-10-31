@@ -27,6 +27,7 @@ import com.tiny.covidtracker.R
 import com.tiny.covidtracker.ui.theme.CovidTrackerTheme
 import com.tiny.covidtracker.ui.theme.Pink55
 import com.tiny.covidtracker.ui.theme.Violet212
+import com.tiny.covidtracker.ui.utils.StatusBarUtil
 import kotlinx.coroutines.delay
 
 @Composable
@@ -47,19 +48,14 @@ fun SplashScreen(onNavigateNextScreen: () -> Unit) {
                 })
         )
         // Customize the delay time
-        delay(3000L)
-        //      navControler.navigate("main_screen")
+        delay(2000L)
+        onNavigateNextScreen.invoke()
     }
 
     Box(
         modifier = Modifier
-            .background(Violet212)
             .fillMaxSize()
     ) {
-        Image(
-            painter = painterResource(id = R.drawable.bg),
-            contentDescription = "Logo",
-        )
         LazyColumn(
             modifier = Modifier.fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
