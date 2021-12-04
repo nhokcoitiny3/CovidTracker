@@ -1,6 +1,7 @@
 package com.tiny.covidtracker.model.data
 
-import DataEntityResponse
+import DataGlobalResponse
+
 class AppData {
     companion object {
         private var instance: AppData? = null
@@ -13,6 +14,6 @@ class AppData {
         }
     }
 
-    var countryDatas: MutableList<DataEntityResponse> = mutableListOf()
+    var countryDatas: MutableList<DataGlobalResponse> = mutableListOf()
 
 }

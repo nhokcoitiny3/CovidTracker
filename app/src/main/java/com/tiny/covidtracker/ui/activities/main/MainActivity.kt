@@ -9,9 +9,9 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.tiny.covidtracker.R
 import com.tiny.covidtracker.databinding.ActivityMainBinding
-import com.tiny.covidtracker.model.data.AppData
 import com.tiny.covidtracker.ui.bases.BaseActivity
 import com.tiny.covidtracker.ui.fragment.GlobalFragment
+import com.tiny.covidtracker.ui.fragment.VietNamFragment
 import com.tiny.covidtracker.ui.utils.StatusBarUtil
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -32,9 +32,14 @@ class MainActivity : BaseActivity() {
                 supportFragmentManager.findFragmentById(R.id.home_nav_host_fragment)
                     ?.childFragmentManager?.fragments?.forEach {
                         if (it is GlobalFragment) {
-                            it.updateData(viewModel.totalData?.countries?.find {
-                                it.countryCode == result.data?.getStringExtra("flag")
-                            })
+                            val flag = result.data?.getStringExtra("flag")?:""
+                            if (flag.isNotEmpty()) {
+                                it.updateData(viewModel.totalData?.find {
+                                    it.countryInfo?.iso2 ?: "" == flag
+                                })
+                            }else{
+                                it.updateDataGlobal()
+                            }
                         }
                     }
             }
@@ -50,7 +55,7 @@ class MainActivity : BaseActivity() {
         setContentView(binding.root)
         initObserver()
         initView()
-        viewModel.getDataTotals()
+        viewModel.getDataGlobal()
     }
 
     private fun initView() {
@@ -63,7 +68,10 @@ class MainActivity : BaseActivity() {
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             when (destination.id) {
                 R.id.homeDest -> {
-                    viewModel.getDataTotals()
+                    viewModel.getDataGlobal()
+                }
+                R.id.reportDest ->{
+                    viewModel.getDataVietNam()
                 }
             }
 
@@ -81,7 +89,27 @@ class MainActivity : BaseActivity() {
                 supportFragmentManager.findFragmentById(R.id.home_nav_host_fragment)
                     ?.childFragmentManager?.fragments?.forEach {
                         if (it is GlobalFragment) {
-                            it.updateData(null)
+                            it.updateListData()
+                        }
+                    }
+            })
+
+            globalLiveData.observe(this@MainActivity,{
+                supportFragmentManager.findFragmentById(R.id.home_nav_host_fragment)
+                    ?.childFragmentManager?.fragments?.forEach {
+                        if (it is GlobalFragment) {
+                            it.updateDataGlobal()
+                        }
+                    }
+
+                getDataTotals()
+            })
+
+            vnLiveData.observe(this@MainActivity,{
+                supportFragmentManager.findFragmentById(R.id.home_nav_host_fragment)
+                    ?.childFragmentManager?.fragments?.forEach {
+                        if (it is VietNamFragment) {
+                            it.updateDataTotal()
                         }
                     }
             })
@@ -99,7 +127,7 @@ class MainActivity : BaseActivity() {
                     finish()
                 } else {
                     super.onBackPressed()
-                    viewModel.getDataTotals()
+                    viewModel.getDataGlobal()
                 }
             }
     }

@@ -1,23 +1,54 @@
 import com.google.gson.annotations.SerializedName
 
 
-data class DataTotalResponse(
-    @SerializedName("ID") val id: String,
-    @SerializedName("Message") val message: String,
-    @SerializedName("Global") val global: DataEntityResponse,
-    @SerializedName("Countries") val countries: List<DataEntityResponse>,
-    @SerializedName("Date") val date: String
+data class DataGlobalResponse(
+    @SerializedName("updated") val updated: Long,
+    @SerializedName("cases") val cases: String,
+    @SerializedName("todayCases") val todayCases: String,
+    @SerializedName("deaths") val deaths: String,
+    @SerializedName("todayDeaths") val todayDeaths: String,
+    @SerializedName("recovered") val recovered: String,
+    @SerializedName("todayRecovered") val todayRecovered: String,
+    @SerializedName("country") val country: String?,
+    @SerializedName("countryInfo") val countryInfo: DataCountryResponse?,
 )
-data class DataEntityResponse(
-    @SerializedName("ID") val ID: String,
-    @SerializedName("Country") val country: String,
-    @SerializedName("CountryCode") val countryCode: String,
-    @SerializedName("Slug") val slug: String,
-    @SerializedName("NewConfirmed") val newConfirmed: String,
-    @SerializedName("TotalConfirmed") val totalConfirmed: String,
-    @SerializedName("NewDeaths") val newDeaths: String,
-    @SerializedName("TotalDeaths") val totalDeaths: String,
-    @SerializedName("NewRecovered") val newRecovered: String,
-    @SerializedName("TotalRecovered") val totalRecovered: String,
-    @SerializedName("Date") val date: String
+data class DataCountryResponse(
+    @SerializedName("country") val country: String?,
+    @SerializedName("iso2") val iso2: String,
+    @SerializedName("flag") val flag: String
+
+)
+data class DataVNResponse(
+    @SerializedName("total") val total: DataVNEntityResponse?,
+    @SerializedName("today") val today: DataVNEntityResponse,
+    @SerializedName("overview") val overview: List<OverviewEntityResponse>,
+    @SerializedName("locations") val locations: List<LocationEntityResponse>
+
+)
+data class DataVNEntityResponse(
+    @SerializedName("internal") val internal: VNEntityResponse?
+)
+data class VNEntityResponse(
+    @SerializedName("death") val death: String?,
+    @SerializedName("treating") val treating: String?,
+    @SerializedName("cases") val cases: String?,
+    @SerializedName("recovered") val recovered: String?,
+)
+data class OverviewEntityResponse(
+    @SerializedName("date") val date: String?,
+    @SerializedName("death") val death: String?,
+    @SerializedName("treating") val treating: String?,
+    @SerializedName("cases") val cases: String?,
+    @SerializedName("recovered") val recovered: String?,
+    @SerializedName("avgCases7day") val avgCases7day: String?,
+    @SerializedName("avgRecovered7day") val avgRecovered7day: String?,
+    @SerializedName("avgDeath7day") val avgDeath7day: String?,
+)
+data class LocationEntityResponse(
+    @SerializedName("name") val name: String?,
+    @SerializedName("death") val death: String?,
+    @SerializedName("treating") val treating: String?,
+    @SerializedName("cases") val cases: String?,
+    @SerializedName("recovered") val recovered: String?,
+    @SerializedName("casesToday") val casesToday: String?,
 )

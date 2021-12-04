@@ -1,6 +1,7 @@
 package com.tiny.covidtracker.ui.activities.main
 
-import DataEntityResponse
+import DataCountryResponse
+import DataGlobalResponse
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -28,7 +29,7 @@ class SelectCountryActivity : BaseActivity() {
 
     lateinit var binding: ActivitySelectCountryBinding
 
-    var listDatas = mutableListOf<DataEntityResponse>()
+    var listDatas = mutableListOf<DataCountryResponse>()
     val adapter = Country2Adapter(mutableListOf()) {
         setResult(RESULT_OK, Intent().run {
             putExtra("flag", it)
@@ -41,18 +42,12 @@ class SelectCountryActivity : BaseActivity() {
         binding = ActivitySelectCountryBinding.inflate(layoutInflater)
         setContentView(binding.root)
         AppData.g().countryDatas.forEach {
-            val data = DataEntityResponse(
-                it.ID,
+            val data = DataCountryResponse(
+
                 it.country,
-                it.countryCode,
-                it.slug,
-                it.newConfirmed,
-                it.totalConfirmed,
-                it.newDeaths,
-                it.totalDeaths,
-                it.newRecovered,
-                it.totalRecovered,
-                it.date
+                it.countryInfo?.iso2 ?: "",
+                it.countryInfo?.flag ?: ""
+
             )
             listDatas.add(data)
 
@@ -101,25 +96,18 @@ class SelectCountryActivity : BaseActivity() {
             override fun afterTextChanged(p0: Editable?) {
                 listDatas.clear()
                 AppData.g().countryDatas.forEach {
-                    val data = DataEntityResponse(
-                        it.ID,
+                    val data = DataCountryResponse(
                         it.country,
-                        it.countryCode,
-                        it.slug,
-                        it.newConfirmed,
-                        it.totalConfirmed,
-                        it.newDeaths,
-                        it.totalDeaths,
-                        it.newRecovered,
-                        it.totalRecovered,
-                        it.date
+                        it.countryInfo?.iso2 ?: "",
+                        it.countryInfo?.flag ?: ""
+
                     )
                     listDatas.add(data)
 
                 }
                 val temp = listDatas.filter {
-                    it.countryCode.lowercase()
-                        .contains(p0.toString().lowercase()) || it.country.lowercase()
+                    it.iso2.lowercase()
+                        .contains(p0.toString().lowercase()) || (it.country ?: "").lowercase()
                         .contains(p0.toString().lowercase())
                 }
                 adapter.updateData(temp)

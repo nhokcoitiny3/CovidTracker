@@ -1,6 +1,6 @@
 package com.tiny.covidtracker.ui.adapter
 
-import DataEntityResponse
+import DataCountryResponse
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,10 +8,10 @@ import com.tiny.covidtracker.databinding.ItemCountry2Binding
 import com.tiny.covidtracker.ui.utils.Utils
 import com.tiny.covidtracker.ui.utils.setSafeOnClickListener
 
-class Country2Adapter(val listDatas: MutableList<DataEntityResponse> = mutableListOf(), val onSelect: (code: String) -> Unit) :
+class Country2Adapter(val listDatas: MutableList<DataCountryResponse> = mutableListOf(), val onSelect: (code: String) -> Unit) :
     RecyclerView.Adapter<Country2Adapter.ViewHolder>() {
 
-    fun updateData(listDatas: List<DataEntityResponse>) {
+    fun updateData(listDatas: List<DataCountryResponse>) {
         this.listDatas.clear()
         this.listDatas.addAll(listDatas)
         notifyDataSetChanged()
@@ -26,7 +26,7 @@ class Country2Adapter(val listDatas: MutableList<DataEntityResponse> = mutableLi
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindData(listDatas[position])
         holder.itemCountryBinding.root.setSafeOnClickListener {
-            onSelect.invoke(listDatas[position].countryCode)
+            onSelect.invoke(listDatas[position].iso2)
         }
     }
 
@@ -35,10 +35,10 @@ class Country2Adapter(val listDatas: MutableList<DataEntityResponse> = mutableLi
     inner class ViewHolder(val itemCountryBinding: ItemCountry2Binding) :
         RecyclerView.ViewHolder(itemCountryBinding.root) {
 
-        fun bindData(data: DataEntityResponse) {
+        fun bindData(data: DataCountryResponse) {
             itemCountryBinding.tvName.text = data.country
             Utils.g().providePicasso(itemView.context)
-                .load("http://www.geognos.com/api/en/countries/flag/${data.countryCode}.png")
+                .load(data.flag)
                 .into(itemCountryBinding.ivFlag)
         }
     }

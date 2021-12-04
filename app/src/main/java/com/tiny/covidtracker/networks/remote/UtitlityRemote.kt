@@ -2,13 +2,14 @@ package com.tiny.covidtracker.networks.remote
 
 import com.google.gson.GsonBuilder
 import com.tiny.covidtracker.data.Service
+import com.tiny.covidtracker.data.ServiceVn
 import com.vnpay.base.constants.DatasourceProperties
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class UtitlityRemote(client: OkHttpClient){
-    private val service: Service
+    private val service: ServiceVn
 
     init {
         val gson = GsonBuilder()
@@ -16,15 +17,15 @@ class UtitlityRemote(client: OkHttpClient){
             .disableHtmlEscaping()
             .create()
         service = Retrofit.Builder()
-            .baseUrl(DatasourceProperties.SERVER_URL)
+            .baseUrl(DatasourceProperties.getUrlVn())
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(client)
             .build().create(
-                Service::class.java
+                ServiceVn::class.java
             )
     }
 
-    fun getService(): Service {
+    fun getService(): ServiceVn {
         return service
     }
 }

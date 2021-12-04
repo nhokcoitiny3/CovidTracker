@@ -1,7 +1,7 @@
 package com.tiny.covidtracker.ui.fragment
 
-import DataEntityResponse
-import DataTotalResponse
+import DataGlobalResponse
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -52,63 +52,71 @@ class GlobalFragment : Fragment() {
         binding.recyclerview.adapter = adapter
     }
 
-    fun updateData(data: DataEntityResponse?) {
+    fun updateDataGlobal() {
+
+        binding.tvLastUpdate.text = getString(
+            R.string.str_last_update,
+            viewModel.globalData?.updated?.let {
+                Companion.convertDate(
+                    Constants.DATE_PATTERN_HH_MM_DDMMYYYY,
+                    it
+                )
+            }
+        )
+
+        binding.tvCountry.text = getString(R.string.str_worldwide)
+        binding.tvConfirmed.text = viewModel.globalData?.cases ?: ""
+        binding.tvNewConfirm.text = viewModel.globalData?.todayCases ?: ""
+        binding.tvDeath.text = viewModel.globalData?.deaths ?: ""
+        binding.tvNewDeath.text = viewModel.globalData?.todayDeaths ?: ""
+        binding.tvReco.text = viewModel.globalData?.todayRecovered ?: ""
+        binding.tvNewReco.text = viewModel.globalData?.todayRecovered ?: ""
+
+    }
+
+    fun updateData(data: DataGlobalResponse?) {
         (binding.recyclerview.layoutManager as LinearLayoutManager).scrollToPositionWithOffset(
             0,
             0
         )
         binding.mlRoot.transitionToStart()
-        if (data == null) {
-            binding.tvLastUpdate.text = getString(
-                R.string.str_last_update,
-                convertDate(
-                    Constants.DATE_PATTERN_YYYY_MM_DD_HH_MM_SS,
+        binding.tvLastUpdate.text = getString(
+            R.string.str_last_update,
+            viewModel.globalData?.updated?.let {
+                Companion.convertDate(
                     Constants.DATE_PATTERN_HH_MM_DDMMYYYY,
-                    viewModel.totalData?.global?.date ?: ""
+                    it
                 )
-            )
+            }
+        )
 
-            binding.tvCountry.text = getString(R.string.str_worldwide)
-
-            binding.tvConfirmed.text = viewModel.totalData?.global?.totalConfirmed ?: ""
-            binding.tvNewConfirm.text = viewModel.totalData?.global?.newConfirmed ?: ""
-            binding.tvDeath.text = viewModel.totalData?.global?.totalDeaths ?: ""
-            binding.tvNewDeath.text = viewModel.totalData?.global?.newDeaths ?: ""
-            binding.tvReco.text = viewModel.totalData?.global?.totalRecovered ?: ""
-            binding.tvNewReco.text = viewModel.totalData?.global?.newRecovered ?: ""
-        } else {
-            binding.tvLastUpdate.text = getString(
-                R.string.str_last_update,
-                convertDate(
-                    Constants.DATE_PATTERN_YYYY_MM_DD_HH_MM_SS,
-                    Constants.DATE_PATTERN_HH_MM_DDMMYYYY,
-                    data.date
-                )
-            )
-
-            binding.tvCountry.text = data.country
-            binding.tvConfirmed.text = data.totalConfirmed
-            binding.tvNewConfirm.text = data.newConfirmed
-            binding.tvDeath.text = data.totalDeaths
-            binding.tvNewDeath.text = data.newDeaths
-            binding.tvReco.text = data.totalRecovered
-            binding.tvNewReco.text = data.newRecovered
-        }
-        viewModel.totalData?.countries?.let { adapter.updateData(it) }
+        binding.tvCountry.text = data?.country ?: ""
+        binding.tvConfirmed.text = data?.cases ?: ""
+        binding.tvNewConfirm.text = data?.todayCases ?: ""
+        binding.tvDeath.text = data?.deaths ?: ""
+        binding.tvNewDeath.text = data?.todayDeaths ?: ""
+        binding.tvReco.text = data?.recovered ?: ""
+        binding.tvNewReco.text = data?.todayRecovered ?: ""
     }
 
-    fun convertDate(fromFormat: String?, toFormat: String?, strDate: String): String {
-        try {
-            val simpleDateFormat = SimpleDateFormat(fromFormat)
-            simpleDateFormat.timeZone = TimeZone.getTimeZone("UTC");
+    fun updateListData() {
+        viewModel.totalData?.let { adapter.updateData(it) }
 
-            val simpleTo = SimpleDateFormat(toFormat)
-            simpleTo.timeZone = TimeZone.getTimeZone("GMT+7");
+    }
 
-            return simpleTo.format(simpleDateFormat.parse(strDate))
-        } catch (ex: ParseException) {
+    companion object {
+        @SuppressLint("SimpleDateFormat")
+        fun convertDate(toFormat: String?, strDate: Long): String {
+            try {
+
+                val simpleTo = SimpleDateFormat(toFormat)
+                simpleTo.timeZone = TimeZone.getTimeZone("GMT+7");
+
+                return simpleTo.format(Date(strDate))
+            } catch (ex: ParseException) {
+            }
+            return ""
         }
-        return strDate
     }
 
 }

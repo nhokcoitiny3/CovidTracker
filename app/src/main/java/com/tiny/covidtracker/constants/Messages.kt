@@ -10,7 +10,9 @@ object Messages {
     const val REGISTER_FINGER: Int = 10
     const val UNREGISTER_FINGER: Int = 11
 
-    const val END_POINT_TOTAL: String = "/summary"
+    const val END_POINT_GLOBAL: String = "/v2/all"
+    const val END_POINT_TOTAL: String = "/v2/countries"
+    const val END_POINT_VIETNAM: String = "/covid/data.json"
 
 
 

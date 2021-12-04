@@ -4,12 +4,18 @@
     <string name="str_title">Covid-19 Tracker</string>
     <string name="str_worldwide">Worldwide</string>
     <string name="str_last_update">Last updated %s</string>
-    <string name="str_confirmed">TOTAL CONFIRMED</string>
-    <string name="str_deaths">TOTAL DEATHS</string>
-    <string name="str_recovered">TOTAL RECOVERED</string>
-    <string name="str_new_confirmed">NEW CONFIRMED</string>
-    <string name="str_new_deaths">NEW DEATHS</string>
-    <string name="str_new_recovered">NEW RECOVERED</string>
+    <string name="str_confirmed">TOTAL CASES</string>
+    <string name="str_total_deaths">TOTAL DEATHS</string>
+    <string name="str_total_recovered">TOTAL RECOVERED</string>
+    <string name="str_new_confirmed">TODAY CASES</string>
+    <string name="str_today_cases">Today cases</string>
+    <string name="str_today">Today</string>
+    <string name="str_cases">Cases</string>
+    <string name="str_deaths">Deaths</string>
+    <string name="str_recovered">Recovered</string>
+    <string name="str_treating">Treating</string>
+    <string name="str_new_deaths">TODAY DEATHS</string>
+    <string name="str_new_recovered">TODAY RECOVERED</string>
     <string name="app_password">Mật khẩu</string>
     <string name="btn_continue">Tiếp tục</string>
     <string name="agree">Đồng ý</string>
@@ -128,5 +134,13 @@
     <string name="str_total">Total</string>
     <string name="str_choose_country">Choose country</string>
     <string name="str_input_country">Input country name/code</string>
+    <string name="str_general">General</string>
+    <string name="str_province_city">Province/City</string>
+    <string name="str_sumary">Sumary</string>
+    <string name="str_today_1">Today</string>
+    <string name="str_7_day">7 days ago</string>
+    <string name="str_avg_cases">Average cases 7 day:  %s</string>
+    <string name="str_avg_reco">Average recovered 7 day:  %s</string>
+    <string name="str_avg_death">Average death 7 day:  %s</string>
 
 </resources>
