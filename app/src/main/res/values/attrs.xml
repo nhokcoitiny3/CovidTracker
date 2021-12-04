@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="dotsColor" format="color" />
+    <attr name="selectedDotColor" format="color" />
+    <attr name="dotsStrokeColor" format="color" />
+    <attr name="dotsSize" format="dimension" />
+    <attr name="dotsWidthFactor" format="float" />
+    <attr name="dotsSpacing" format="dimension" />
+    <attr name="dotsCornerRadius" format="dimension" />
+    <attr name="dotsStrokeWidth" format="dimension" />
+    <attr name="stiffness" format="float" />
+    <attr name="dampingRatio" format="float" />
+    <attr name="progressMode" format="boolean" />
+    <attr name="dotsClickable" format="boolean" />
+    <attr name="otp_color" format="reference" />
+
+    <declare-styleable name="Theme">
+        <attr name="backgroundTitleBar" format="reference" />
+        <attr name="backgroundSubmit" format="reference" />
+        <attr name="colorTouch" format="reference" />
+        <attr name="backgroundDeny" format="reference" />
+
+    </declare-styleable>
+    <declare-styleable name="CircleProgressBar">
+        <attr name="inner_radius" format="dimension" />
+        <attr name="background_color" format="color" />
+        <attr name="progress_color" format="color" />
+        <attr name="progress_stoke_width" format="dimension" />
+        <attr name="show_arrow" format="boolean" />
+        <attr name="enable_circle_background" format="boolean" />
+        <attr name="arrow_width" format="dimension" />
+        <attr name="arrow_height" format="dimension" />
+        <attr name="progress" format="integer" />
+        <attr name="max" format="integer" />
+        <attr name="progress_text_size" format="dimension" />
+        <attr name="progress_text_color" format="color" />
+        <attr name="progress_text_visibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
+        </attr>
+        android:id="@+id/items"
+    </declare-styleable>
+
+    <declare-styleable name="TextView">
+        <attr name="right" format="reference" />
+        <attr name="top" format="reference" />
+        <attr name="bottom" format="reference" />
+        <attr name="left" format="reference" />
+        <attr name="check" format="boolean" />
+        <attr name="tint" format="color" />
+        <attr name="background" format="reference" />
+        <attr name="html" format="string" />
+        <attr name="light" format="boolean" />
+        <attr name="cusfont" format="enum">
+            <enum name="Regular" value="0" />
+            <enum name="Medium" value="1" />
+            <enum name="SemiBold" value="2" />
+            <enum name="Bold" value="3" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="GroupTextView">
+        <attr name="gr_hint" format="string" />
+        <attr name="gr_text" format="string" />
+        <attr name="gr_icon" format="reference" />
+        <attr name="gr_icon_pos" format="integer">
+            <flag name="bottom" value="80" />
+            <flag name="center" value="17" />
+            <flag name="center_horizontal" value="1" />
+            <flag name="center_vertical" value="16" />
+            <flag name="clip_horizontal" value="8" />
+            <flag name="clip_vertical" value="128" />
+            <flag name="end" value="8388613" />
+            <flag name="fill" value="119" />
+            <flag name="fill_horizontal" value="7" />
+            <flag name="fill_vertical" value="112" />
+            <flag name="left" value="3" />
+            <flag name="right" value="5" />
+            <flag name="start" value="8388611" />
+            <flag name="top" value="48" />
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="SelectBoxView">
+        <attr name="sb_tittle" format="string" />
+        <attr name="sb_value" format="string" />
+        <attr name="sb_tittle_dialog" format="string" />
+        <attr name="sb_show_ic_tick" format="boolean" />
+        <attr name="sb_searchable" format="boolean" />
+        <attr name="sb_full_height_dialog" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="InputBoxView">
+        <attr name="ib_hint" format="string" />
+        <attr name="ib_value" format="string" />
+        <attr name="ib_max_length" format="integer" />
+        <attr name="ib_background" format="reference" />
+        <attr name="ib_hint_color" format="color" />
+        <attr name="ib_value_color" format="color" />
+        <attr name="ib_tittle_dialog" format="string" />
+        <attr name="ib_full_height_dialog" format="boolean"/>
+        <attr name="ib_icon" format="reference" />
+        <attr name="ib_input_type" format="enum">
+            <enum name="number" value="1" />
+            <enum name="email" value="2" />
+            <enum name="capWords" value="3" />
+            <enum name="text" value="4" />
+        </attr>
+
+    </declare-styleable>
+
+    <declare-styleable name="ViewPagerIndicator">
+        <attr name="color_active_viewpager" format="reference|color" />
+        <attr name="color_inactive_viewpager" format="reference|color" />
+        <attr name="radius_viewpager" format="reference|dimension" />
+        <attr name="selected_factor" format="integer" />
+    </declare-styleable>
+
+
+    <declare-styleable name="SpringDotsIndicator">
+        <attr name="dotsColor" />
+        <attr name="dotsSize" />
+        <attr name="dotsSpacing" />
+        <attr name="dotsCornerRadius" />
+        <attr name="dotsStrokeWidth" />
+        <attr name="dotsStrokeColor" />
+        <attr name="stiffness" />
+        <attr name="dampingRatio" />
+        <attr name="dotsClickable" />
+    </declare-styleable>
+    <declare-styleable name="DotsIndicator">
+        <attr name="dotsColor" />
+        <attr name="selectedDotColor" />
+        <attr name="dotsSize" />
+        <attr name="dotsWidthFactor" />
+        <attr name="dotsSpacing" />
+        <attr name="dotsCornerRadius" />
+        <attr name="progressMode" />
+        <attr name="dotsClickable" />
+        <attr name="dotsElevation" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="PxBlurringView">
+        <attr name="blurRadius" format="integer" />
+        <attr name="downsampleFactor" format="integer" />
+        <attr name="overlayColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="CornerView">
+        <attr name="radius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="NumberOTPView">
+        <attr name="isMpin" format="boolean" />
+        <attr name="squareBackground" format="color" />
+        <attr name="textColor" format="color" />
+        <attr name="focusColor" format="color" />
+        <attr name="borderColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="RulesView">
+        <attr name="rule_html" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="GroupEditTextView">
+        <attr name="group_edittext_view_hint" format="string" />
+        <attr name="group_edittext_view_value" format="string" />
+        <attr name="group_edittext_view_icon" format="reference" />
+        <attr name="group_edittext_view_icon_width" format="dimension" />
+        <attr name="group_edittext_view_icon_height" format="dimension" />
+        <attr name="group_edittext_view_icon_tint" format="color" />
+        <attr name="group_edittext_view_icon_rotation" format="float" />
+        <attr name="group_edittext_view_show_clear_text" format="boolean" />
+        <attr name="group_edittext_view_hint_text_color" format="color" />
+        <attr name="group_edittext_view_hint_text_size" format="dimension" />
+        <attr name="group_edittext_view_value_text_color" format="color" />
+        <attr name="group_edittext_view_value_text_size" format="dimension" />
+        <attr name="group_edittext_view_value_max_length" format="integer" />
+        <attr name="group_edittext_view_cusfont" format="enum">
+            <enum name="Regular" value="0" />
+            <enum name="Medium" value="1" />
+            <enum name="SemiBold" value="2" />
+            <enum name="Bold" value="3" />
+        </attr>
+        <attr name="group_edittext_view_editable" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="LeftRightTextView">
+        <attr name="left_right_tv_left_ic_res" format="reference" />
+        <attr name="left_right_tv_left_ic_tint" format="color" />
+        <attr name="left_right_tv_left_ic_width" format="dimension" />
+        <attr name="left_right_tv_left_ic_height" format="dimension" />
+        <attr name="left_right_tv_left_label" format="string" />
+        <attr name="left_right_tv_left_label_all_caps" format="boolean" />
+        <attr name="left_right_tv_left_label_color" format="color" />
+        <attr name="left_right_tv_left_label_hint" format="string" />
+        <attr name="left_right_tv_left_text_size" format="reference" />
+        <attr name="left_right_tv_left_label_max_line" format="integer" />
+        <attr name="left_right_tv_left_label_ellipsize">
+            <enum name="none" value="0" />
+            <enum name="start" value="1" />
+            <enum name="middle" value="2" />
+            <enum name="end" value="3" />
+            <enum name="marquee" value="4" />
+        </attr>
+
+        <attr name="left_right_tv_right_ic_res" format="reference" />
+        <attr name="left_right_tv_right_ic_tint" format="color" />
+        <attr name="left_right_tv_right_ic_width" format="dimension" />
+        <attr name="left_right_tv_right_ic_height" format="dimension" />
+        <attr name="left_right_tv_right_label" format="string" />
+        <attr name="left_right_tv_right_label_color" format="color" />
+        <attr name="left_right_tv_right_label_hint" format="string" />
+        <attr name="left_right_tv_right_text_size" format="reference" />
+        <attr name="left_right_tv_right_label_max_line" format="integer" />
+        <attr name="left_right_tv_right_label_ellipsize">
+            <enum name="none" value="0" />
+            <enum name="start" value="1" />
+            <enum name="middle" value="2" />
+            <enum name="end" value="3" />
+            <enum name="marquee" value="4" />
+        </attr>
+
+        <attr name="left_right_tv_left_label_style" format="enum">
+            <enum name="normal" value="1" />
+            <enum name="bold" value="2" />
+            <enum name="italic" value="3" />
+            <enum name="bold_italic" value="4" />
+        </attr>
+        <attr name="left_right_tv_right_label_style" format="enum">
+            <enum name="normal" value="1" />
+            <enum name="bold" value="2" />
+            <enum name="italic" value="3" />
+            <enum name="bold_italic" value="4" />
+        </attr>
+        <attr name="left_right_tv_left_ic_padding" format="dimension" />
+        <attr name="left_right_tv_right_ic_padding" format="dimension" />
+        <attr name="left_right_tv_space_ic_text" format="dimension" />
+        <attr name="left_right_tv_left_max_width" format="float" />
+        <attr name="left_right_tv_right_max_width" format="float" />
+        <attr name="cusfont_left" format="enum">
+            <enum name="Regular" value="0" />
+            <enum name="Medium" value="1" />
+            <enum name="SemiBold" value="2" />
+            <enum name="Bold" value="3" />
+        </attr>
+        <attr name="cusfont_right" format="enum">
+            <enum name="Regular" value="0" />
+            <enum name="Medium" value="1" />
+            <enum name="SemiBold" value="2" />
+            <enum name="Bold" value="3" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="CropOverlayView">
+        <attr name="guideLines" format="boolean"/>
+        <attr name="marginTop" format="dimension"/>
+        <attr name="marginSide" format="dimension"/>
+        <attr name="minWidth" format="dimension"/>
+        <attr name="maxWidth" format="dimension"/>
+        <attr name="cornerRadius" format="dimension"/>
+        <attr name="cropOverlayColor" format="color"/>
+    </declare-styleable>
+
+</resources>

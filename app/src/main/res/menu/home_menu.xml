@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@id/homeDest"
+        android:icon="@drawable/ic_global"
+        android:title="" />
+    <item
+        android:id="@id/reportDest"
+        android:icon="@drawable/ic_vietnam"
+        android:title="" />
+    <item
+        android:id="@id/utilitiesDest"
+        android:icon="@drawable/ic_news"
+        android:title="" />
+    <item
+        android:id="@id/informationDest"
+        android:icon="@drawable/ic_health"
+        android:title="" />
+    <item
+        android:id="@id/settingDest"
+        android:icon="@drawable/ic_declaration"
+        android:title="" />
+</menu>

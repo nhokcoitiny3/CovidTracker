@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_nav"
+    app:startDestination="@id/homeDest">
+    <fragment
+        android:id="@+id/homeDest"
+        android:name="com.tiny.covidtracker.ui.fragment.GlobalFragment"
+        tools:layout="@layout/fragment_global">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/reportDest"
+        android:name="com.tiny.covidtracker.ui.fragment.VietNamFragment"
+        tools:layout="@layout/fragment_vietnam">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/utilitiesDest"
+        android:name="com.tiny.covidtracker.ui.fragment.NewsFragment"
+        tools:layout="@layout/fragment_news">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/informationDest"
+        android:name="com.tiny.covidtracker.ui.fragment.HealthFragment"
+        tools:layout="@layout/fragment_health">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingDest"
+        android:name="com.tiny.covidtracker.ui.fragment.DeclarationFragment"
+        tools:layout="@layout/fragment_declaration">
+
+    </fragment>
+
+</navigation>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetEnd="@id/collapsed"
+        app:constraintSetStart="@id/expanded">
+
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@id/recyclerview"
+            app:touchAnchorSide="top" />
+
+        <KeyFrameSet>
+            <KeyAttribute
+                app:framePosition="60"
+                app:motionTarget="@id/toolbar_image">
+                <CustomAttribute
+                    app:attributeName="imageAlpha"
+                    app:customIntegerValue="255" />
+            </KeyAttribute>
+            <KeyAttribute
+                app:framePosition="90"
+                app:motionTarget="@id/toolbar_image">
+                <CustomAttribute
+                    app:attributeName="imageAlpha"
+                    app:customIntegerValue="0" />
+            </KeyAttribute>
+            <KeyPosition
+                app:framePosition="50"
+                app:keyPositionType="pathRelative"
+                app:motionTarget="@id/tvTitle" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/expanded">
+        <Constraint
+            android:id="@id/toolbar_image"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp32"
+            android:layout_marginTop="@dimen/dp36"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@id/tvCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp32"
+            android:layout_marginTop="@dimen/dp8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+        <Constraint
+            android:id="@id/tvLastUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp32"
+            android:layout_marginTop="@dimen/dp8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCountry" />
+        <Constraint
+            android:id="@id/ln_summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/toolbar_image"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_image" />
+        <Constraint
+            android:id="@id/ln_summary_2"
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/ln_summary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <Constraint
+            android:id="@id/ln_summary_3"
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/ln_summary_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/collapsed">
+        <Constraint
+            android:id="@id/toolbar_image"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp32"
+            android:visibility="gone" />
+        <Constraint
+            android:id="@id/tvCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp32"
+            app:layout_constraintBottom_toBottomOf="@id/toolbar_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/toolbar_image" />
+        <Constraint
+            android:id="@id/tvLastUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp32"
+            app:layout_constraintBottom_toBottomOf="@id/toolbar_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/toolbar_image" />
+        <Constraint
+            android:id="@id/ln_summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp16"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_image" />
+        <Constraint
+            android:id="@id/ln_summary_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/dp16"
+            app:layout_constraintTop_toBottomOf="@id/ln_summary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <Constraint
+            android:id="@id/ln_summary_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/dp16"
+            app:layout_constraintTop_toBottomOf="@id/ln_summary_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </ConstraintSet>
+
+</MotionScene>

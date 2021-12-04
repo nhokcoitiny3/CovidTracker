@@ -22,7 +22,17 @@
 
     <style name="Theme.CovidTracker.NoActionBar">
         <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/default_color</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorHint">@color/color_hint</item>
+        <item name="android:textColor">@color/color_text</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 
     <style name="Theme.CovidTracker.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

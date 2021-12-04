@@ -3,12 +3,33 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/drawable/bg_radius_30.xml" value="0.2759259259259259" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/drawable/ic_arrow_back.xml" value="0.2759259259259259" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/drawable/ic_close.xml" value="0.2759259259259259" />
         <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/drawable/ic_declaration.xml" value="0.1" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/drawable/ic_drop_down.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/drawable/ic_global.xml" value="0.1" />
         <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/drawable/ic_global_unselected.xml" value="0.1" />
         <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/drawable/ic_health.xml" value="0.1" />
         <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/drawable/ic_news.xml" value="0.1" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/drawable/ic_vietnam.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/drawable/ic_vietnam_sel.xml" value="0.35462962962962963" />
         <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/drawable/ic_virus.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/drawable/splash_background.xml" value="0.2109375" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/layout/activity_select_country.xml" value="0.22" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/layout/dialog_loading.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/layout/dialog_notice.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/layout/fragment_declaration.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/layout/fragment_global.xml" value="0.18055555555555555" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/layout/fragment_health.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/layout/fragment_news.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/layout/fragment_vietnam.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/layout/global_fragment.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/layout/item_country.xml" value="0.1984375" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/layout/item_country_2.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/menu/home_menu.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/xml/collapsing_animation_scene.xml" value="0.33645833333333336" />
       </map>
     </option>
   </component>
