@@ -13,6 +13,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activities.main.MainActivity" />
         <activity android:name=".ui.activities.main.SelectCountryActivity" />
+        <activity android:name=".ui.activities.main.ProvinceActivity" />
+        <activity android:name=".ui.activities.main.BrowserActivity" />
         <activity
             android:name=".ui.activities.splash.SplashActivity"
             android:exported="true"

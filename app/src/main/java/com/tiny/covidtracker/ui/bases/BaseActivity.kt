@@ -1,13 +1,9 @@
 package com.tiny.covidtracker.ui.bases
 
-import android.content.Context
 import android.os.Bundle
-import android.view.MotionEvent
-import android.view.inputmethod.InputMethodManager
-import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.tiny.covidtracker.ui.dialogs.LoadingDialog
-import com.vnpay.base.di.Common
+import com.tiny.covidtracker.di.Common
 import org.koin.android.ext.android.inject
 
 abstract class BaseActivity : AppCompatActivity() {

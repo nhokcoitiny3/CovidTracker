@@ -11,6 +11,7 @@ import com.tiny.covidtracker.R
 import com.tiny.covidtracker.databinding.ActivityMainBinding
 import com.tiny.covidtracker.ui.bases.BaseActivity
 import com.tiny.covidtracker.ui.fragment.GlobalFragment
+import com.tiny.covidtracker.ui.fragment.NewsFragment
 import com.tiny.covidtracker.ui.fragment.VietNamFragment
 import com.tiny.covidtracker.ui.utils.StatusBarUtil
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -32,12 +33,12 @@ class MainActivity : BaseActivity() {
                 supportFragmentManager.findFragmentById(R.id.home_nav_host_fragment)
                     ?.childFragmentManager?.fragments?.forEach {
                         if (it is GlobalFragment) {
-                            val flag = result.data?.getStringExtra("flag")?:""
+                            val flag = result.data?.getStringExtra("flag") ?: ""
                             if (flag.isNotEmpty()) {
                                 it.updateData(viewModel.totalData?.find {
                                     it.countryInfo?.iso2 ?: "" == flag
                                 })
-                            }else{
+                            } else {
                                 it.updateDataGlobal()
                             }
                         }
@@ -70,7 +71,7 @@ class MainActivity : BaseActivity() {
                 R.id.homeDest -> {
                     viewModel.getDataGlobal()
                 }
-                R.id.reportDest ->{
+                R.id.reportDest -> {
                     viewModel.getDataVietNam()
                 }
             }
@@ -94,7 +95,7 @@ class MainActivity : BaseActivity() {
                     }
             })
 
-            globalLiveData.observe(this@MainActivity,{
+            globalLiveData.observe(this@MainActivity, {
                 supportFragmentManager.findFragmentById(R.id.home_nav_host_fragment)
                     ?.childFragmentManager?.fragments?.forEach {
                         if (it is GlobalFragment) {
@@ -105,11 +106,21 @@ class MainActivity : BaseActivity() {
                 getDataTotals()
             })
 
-            vnLiveData.observe(this@MainActivity,{
+            vnLiveData.observe(this@MainActivity, {
                 supportFragmentManager.findFragmentById(R.id.home_nav_host_fragment)
                     ?.childFragmentManager?.fragments?.forEach {
                         if (it is VietNamFragment) {
                             it.updateDataTotal()
+                            it.updateDataList()
+                        }
+                    }
+            })
+
+            newsLiveData.observe(this@MainActivity, { data ->
+                supportFragmentManager.findFragmentById(R.id.home_nav_host_fragment)
+                    ?.childFragmentManager?.fragments?.forEach {
+                        if (it is NewsFragment) {
+                            it.updateData(data)
                         }
                     }
             })

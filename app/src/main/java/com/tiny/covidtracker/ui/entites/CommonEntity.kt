@@ -1,4 +1,4 @@
-package com.vnpay.base.ui.entites
+package com.tiny.covidtracker.ui.entites
 
 /**
  * Created by Lvhieu2016 on 9/20/2016.
@@ -8,6 +8,7 @@ class CommonEntity {
     private var icon: Int = 0
     private var title: String? = null
     private var descript: String? = null
+    private var img: String? = null
     var destiny: String? = null
     private var isHightLight: Boolean = false
     private var typeLayout: Int = 0
@@ -54,9 +55,17 @@ class CommonEntity {
     fun getDescript(): String? {
         return descript
     }
+    fun getImg(): String? {
+        return img
+    }
 
     fun setDescript(descript: String?): CommonEntity {
         this.descript = descript
+        return this
+    }
+
+    fun setImg(img: String?): CommonEntity {
+        this.img = img
         return this
     }
 

@@ -1,4 +1,4 @@
-package com.vnpay.base.constants
+package com.tiny.covidtracker.constants
 
 object Tags {
 
@@ -27,6 +27,8 @@ object Tags {
     const val LOGIN_REQUEST = 2222
     const val DATE_START_FPR = "DATE_START_FPR"
     const val COUNT_FPR = "COUNT_FPR"
+
+    const val KEY_INTENT_DATA = "KEY_INTENT_DATA"
 
 
 }

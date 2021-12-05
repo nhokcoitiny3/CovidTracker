@@ -1,4 +1,4 @@
-package com.vnpay.base.di
+package com.tiny.covidtracker.di
 
 import android.annotation.SuppressLint
 import android.app.Activity

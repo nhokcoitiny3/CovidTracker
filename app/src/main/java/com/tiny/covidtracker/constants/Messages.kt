@@ -1,4 +1,4 @@
-package com.vnpay.base.constants
+package com.tiny.covidtracker.constants
 
 object Messages {
 

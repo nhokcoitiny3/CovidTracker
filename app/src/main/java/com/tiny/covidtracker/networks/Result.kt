@@ -1,4 +1,4 @@
-package com.vnpay.base.networks
+package com.tiny.covidtracker.networks
 
 import okhttp3.Response
 import retrofit2.HttpException

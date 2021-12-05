@@ -2,9 +2,9 @@ package com.tiny.covidtracker.data
 
 import DataGlobalResponse
 import DataVNResponse
-import com.vnpay.base.constants.Messages.END_POINT_GLOBAL
-import com.vnpay.base.constants.Messages.END_POINT_TOTAL
-import com.vnpay.base.constants.Messages.END_POINT_VIETNAM
+import com.tiny.covidtracker.constants.Messages.END_POINT_GLOBAL
+import com.tiny.covidtracker.constants.Messages.END_POINT_TOTAL
+import com.tiny.covidtracker.constants.Messages.END_POINT_VIETNAM
 import retrofit2.http.GET
 
 interface Service {

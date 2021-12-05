@@ -1,7 +1,5 @@
 package com.tiny.covidtracker.di
 
-import com.vnpay.base.di.AndroidResourceProvider
-import com.vnpay.base.di.ResourceProvider
 import com.tiny.covidtracker.data.impl.HomeRepo
 import com.tiny.covidtracker.data.impl.HomeRepoImpl
 import com.tiny.covidtracker.data.impl.VNRepo

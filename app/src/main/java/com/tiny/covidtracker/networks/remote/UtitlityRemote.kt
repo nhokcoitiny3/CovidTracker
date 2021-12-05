@@ -1,9 +1,8 @@
 package com.tiny.covidtracker.networks.remote
 
 import com.google.gson.GsonBuilder
-import com.tiny.covidtracker.data.Service
 import com.tiny.covidtracker.data.ServiceVn
-import com.vnpay.base.constants.DatasourceProperties
+import com.tiny.covidtracker.constants.DatasourceProperties
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

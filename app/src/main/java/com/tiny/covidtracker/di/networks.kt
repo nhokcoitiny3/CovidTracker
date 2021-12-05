@@ -5,7 +5,7 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.tiny.covidtracker.data.Service
 import com.tiny.covidtracker.data.ServiceVn
-import com.vnpay.base.constants.DatasourceProperties
+import com.tiny.covidtracker.constants.DatasourceProperties
 import com.tiny.covidtracker.networks.remote.MainRemote
 import com.tiny.covidtracker.networks.SSLInterceptor
 import com.tiny.covidtracker.networks.remote.UtitlityRemote

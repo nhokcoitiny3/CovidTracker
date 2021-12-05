@@ -52,13 +52,12 @@ abstract class BaseViewModel : ViewModel() {
                 throw e
             } finally {
                 listBlock.remove(block)
-                if (listBlock.isEmpty())
-                    withContext(Dispatchers.Main) {
-                        hideLoading()
-                    }
+                withContext(Dispatchers.Main) {
+                    hideLoading()
+                }
+                return@launch
             }
 
-            return@launch
         }
     }
 

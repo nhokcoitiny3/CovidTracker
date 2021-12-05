@@ -1,7 +1,6 @@
 package com.tiny.covidtracker.data.impl
 
 import DataGlobalResponse
-import DataVNResponse
 import com.tiny.covidtracker.data.Service
 
 interface HomeRepo {

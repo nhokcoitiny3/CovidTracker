@@ -1,4 +1,4 @@
-package com.vnpay.base.ui.views
+package com.tiny.covidtracker.ui.views
 
 import android.content.Context
 import android.util.AttributeSet

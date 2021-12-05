@@ -48,7 +48,6 @@
     <string name="branch_open">Chi nhánh mở</string>
     <string name="all">Tất cả</string>
     <string name="decide_logout">Quý khách có chắc chắn muốn thoát phiên đăng nhập?</string>
-    <string name="faq_link">https://mobile.vnpay.vn/VBA/html/vi/html-qa.html</string>
     <string name="notice_forget_pass">Quý khách vui lòng tới quầy giao dịch tại chi nhánh đăng ký tài khoản để được hỗ
         trợ. Xin cảm ơn!
     </string>
@@ -142,5 +141,9 @@
     <string name="str_avg_cases">Average cases 7 day:  %s</string>
     <string name="str_avg_reco">Average recovered 7 day:  %s</string>
     <string name="str_avg_death">Average death 7 day:  %s</string>
+    <string name="str_vietnam">Viet Nam</string>
+    <string name="str_news">News</string>
+    <string name="str_msg_5k">Message 5K</string>
+    <string name="str_hospital_phone">Danh sách số điện thoại các bệnh viện</string>
 
 </resources>

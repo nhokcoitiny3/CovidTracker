@@ -1,11 +1,7 @@
 package com.tiny.covidtracker.networks
 
-import android.util.Log
-import com.vnpay.base.constants.DatasourceProperties
+import com.tiny.covidtracker.constants.DatasourceProperties
 import okhttp3.*
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.ResponseBody.Companion.toResponseBody
-import okio.Buffer
 import org.json.JSONObject
 import java.net.UnknownHostException
 
