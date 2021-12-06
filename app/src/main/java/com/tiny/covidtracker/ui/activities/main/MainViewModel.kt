@@ -12,6 +12,13 @@ import com.tiny.covidtracker.ui.entites.CommonEntity
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.jsoup.select.Elements
+import java.security.KeyManagementException
+import java.security.cert.CertificateException
+import java.security.cert.X509Certificate
+import javax.net.ssl.SSLContext
+import javax.net.ssl.SSLSocketFactory
+import javax.net.ssl.TrustManager
+import javax.net.ssl.X509TrustManager
 
 class MainViewModel(val repo: HomeRepo, val vnRepo: VNRepo) :
     BaseViewModel() {
@@ -54,7 +61,9 @@ class MainViewModel(val repo: HomeRepo, val vnRepo: VNRepo) :
 
     fun getNews() {
         isLoading.postValue(true)
-        val document: Document = Jsoup.connect("https://covid19.gov.vn/ban-tin-covid-19.htm").get()
+        val document: Document = Jsoup.connect("https://covid19.gov.vn/ban-tin-covid-19.htm")
+            .sslSocketFactory(socketFactory())
+            .get()
         val listData: MutableList<CommonEntity> = mutableListOf()
         val elms: Elements = document.getElementsByClass("box-list-focus-item")
         for (i in elms.indices) {
@@ -85,7 +94,9 @@ class MainViewModel(val repo: HomeRepo, val vnRepo: VNRepo) :
 
         }
         val document2: Document =
-            Jsoup.connect("https://covid19.gov.vn/chi-dao-chong-dich.htm").get()
+            Jsoup.connect("https://covid19.gov.vn/chi-dao-chong-dich.htm")
+                .sslSocketFactory(socketFactory())
+                .get()
         val elms3: Elements = document2.getElementsByClass("box-list-focus-item")
         for (i in elms3.indices) {
             val elm_row = elms3[i].getElementsByTag("a")
@@ -115,7 +126,9 @@ class MainViewModel(val repo: HomeRepo, val vnRepo: VNRepo) :
 
         }
         val document3: Document =
-            Jsoup.connect("https://covid19.gov.vn/du-phong-dieu-tri.htm").get()
+            Jsoup.connect("https://covid19.gov.vn/du-phong-dieu-tri.htm")
+                .sslSocketFactory(socketFactory())
+                .get()
         val elms5: Elements = document3.getElementsByClass("box-list-focus-item")
         for (i in elms5.indices) {
             val elm_row = elms5[i].getElementsByTag("a")
@@ -145,7 +158,9 @@ class MainViewModel(val repo: HomeRepo, val vnRepo: VNRepo) :
 
         }
         val document4: Document =
-            Jsoup.connect("https://covid19.gov.vn/vaccine-tiem-chung.htm").get()
+            Jsoup.connect("https://covid19.gov.vn/vaccine-tiem-chung.htm")
+                .sslSocketFactory(socketFactory())
+                .get()
         val elms7: Elements = document4.getElementsByClass("box-list-focus-item")
         for (i in elms7.indices) {
             val elm_row = elms7[i].getElementsByTag("a")
@@ -174,7 +189,9 @@ class MainViewModel(val repo: HomeRepo, val vnRepo: VNRepo) :
             listData.add(commonEntity)
 
         }
-        val document5: Document = Jsoup.connect("https://covid19.gov.vn/tin-tuc.htm").get()
+        val document5: Document = Jsoup.connect("https://covid19.gov.vn/tin-tuc.htm")
+            .sslSocketFactory(socketFactory())
+            .get()
         val elms9: Elements = document5.getElementsByClass("box-list-focus-item")
         for (i in elms9.indices) {
             val elm_row = elms9[i].getElementsByTag("a")
@@ -206,4 +223,34 @@ class MainViewModel(val repo: HomeRepo, val vnRepo: VNRepo) :
         isLoading.postValue(false)
         newsLiveData.postValue(listData)
     }
+
+    private fun socketFactory(): SSLSocketFactory {
+        val trustAllCerts = arrayOf<TrustManager>(object : X509TrustManager {
+            @Throws(CertificateException::class)
+            override fun checkClientTrusted(chain: Array<X509Certificate>, authType: String) {
+            }
+
+            @Throws(CertificateException::class)
+            override fun checkServerTrusted(chain: Array<X509Certificate>, authType: String) {
+            }
+
+            override fun getAcceptedIssuers(): Array<X509Certificate> {
+                return arrayOf()
+            }
+        })
+
+        try {
+            val sslContext = SSLContext.getInstance("TLS")
+            sslContext.init(null, trustAllCerts, java.security.SecureRandom())
+            return sslContext.socketFactory
+        } catch (e: Exception) {
+            when (e) {
+                is RuntimeException, is KeyManagementException -> {
+                    throw RuntimeException("Failed to create a SSL socket factory", e)
+                }
+                else -> throw e
+            }
+        }
+    }
+
 }
