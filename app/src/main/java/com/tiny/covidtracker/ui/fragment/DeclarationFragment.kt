@@ -16,7 +16,6 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 class DeclarationFragment : Fragment() {
     val viewModel: MainViewModel by sharedViewModel()
 
-
     lateinit var binding: FragmentDeclarationBinding
 
     override fun onCreateView(
@@ -35,7 +34,7 @@ class DeclarationFragment : Fragment() {
     }
 
     @SuppressLint("SetJavaScriptEnabled")
-    fun initView() {
+    private fun initView() {
         binding.wbContainer.settings.javaScriptEnabled = true
         binding.wbContainer.settings.javaScriptCanOpenWindowsAutomatically = true
         binding.wbContainer.webViewClient = object : WebViewClient() {
@@ -47,11 +46,8 @@ class DeclarationFragment : Fragment() {
             override fun onPageFinished(view: WebView?, url: String?) {
                 super.onPageFinished(view, url)
                 viewModel.hideLoading()
-
-
             }
         }
         binding.wbContainer.loadUrl("https://tokhaiyte.vn/")
     }
-
 }
