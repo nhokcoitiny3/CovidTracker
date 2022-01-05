@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/PMmanguonmo/CovidTracker/app/src/main/res/layout/fragment_declaration.xml" value="0.21354166666666666" />
+        <entry key="..\:/PMmanguonmo/CovidTracker/app/src/main/res/layout/fragment_global.xml" value="0.1038500506585613" />
+        <entry key="..\:/PMmanguonmo/CovidTracker/app/src/main/res/layout/fragment_health.xml" value="0.21354166666666666" />
         <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/drawable/bg_box_selected.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/drawable/bg_box_unselected.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/lehon/StudioProjects/CovidTracker/app/src/main/res/drawable/bg_radius_30.xml" value="0.2759259259259259" />
@@ -43,7 +46,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

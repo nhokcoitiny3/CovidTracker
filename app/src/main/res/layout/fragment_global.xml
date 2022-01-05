@@ -9,7 +9,6 @@
     app:layoutDescription="@xml/collapsing_animation_scene"
     app:showPaths="false">
 
-
     <ImageView
         android:id="@+id/toolbar_image"
         android:layout_width="0dp"
@@ -22,7 +21,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/tvTitle"
